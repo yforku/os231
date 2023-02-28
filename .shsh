@@ -1,0 +1,10 @@
+#!/bin/bash
+# REV04: Tue 31 Jan 2023 17:00 rms46
+# REV03: Thu 21 Jul 2022 13:00 rms46
+# REV02: Mon 11 Oct 2021 11:00 ana117
+# REV01: Mon 11 Oct 2021 06:00 rms46
+# REV00: Thu 08 Jul 2021 10:00 rms46
+# START: 2021
+
+echo "XYZZY: Nothing happens"
+
