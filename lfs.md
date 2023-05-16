@@ -2,9 +2,9 @@
 permalink: LFS/
 ---
 
-# LFS AARCH64 (ARM64)
+# LFS 11.3 AARCH64 (ARM64)
 
-[&#x213C;](#idxXX)<br id="idx00">
+[HOME](../) --- [&#x213C;](#idxXX)<br id="idx00">
 ## TOC
 
 * [Packages](#idx01)
@@ -16,6 +16,32 @@ permalink: LFS/
 
 Bad News: The [LFS ARM64 site](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/) always updates/changes!
 Always use the ORI packages!
+
+### LFS Chapter 3.1 Download Script (<span style="color:red; font-weight:bold;">root</span>)
+
+```
+echo "============================================"
+echo "LFS should be /mnt/lfs AND MAKEFLAGS = cores"
+echo "LFS=$LFS MAKEFLAGS=$MAKEFLAGS"
+echo "============================================"
+sleep 3
+mkdir -pv $LFS/sources/
+chmod -v  a+wt $LFS/sources/
+cd        $LFS/sources/
+wget -c   https://www.linuxfromscratch.org/lfs/view/11.3/wget-list-sysv --directory-prefix=$LFS/sources
+wget -c   --input-file=$LFS/sources/wget-list-sysv --directory-prefix=$LFS/sources
+wget -c   https://www.linuxfromscratch.org/lfs/view/11.3/md5sums --directory-prefix=$LFS/sources
+md5sum -c md5sums
+chown root:root $LFS/sources/*
+
+
+```
+
+* [**ORI** Package Link](https://www.linuxfromscratch.org/lfs/view/11.3/chapter03/introduction.html)
+* [KW Package Link](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/chapter03/introduction.html)
+
+[&#x213C;](#)<br id="idx01">
+### ORI vs KW
 
 | **ORI (amd64)**                      | **KW (arm64)**                       |
 | x -------------------------------- x | x -------------------------------- x | 
