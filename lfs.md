@@ -44,7 +44,7 @@ permalink: LFS/
 * 8.73. Util-linux-2.38.1 --> 8.74. Util-linux-2.38.1
 * 8.74. E2fsprogs-1.47.0 --> 8.75. E2fsprogs-1.47.0
 * 8.75. Sysklogd-1.5.1 --> 8.76. Sysklogd-1.5.1
-* 8.76. Sysvinit-3.06 --> 8.77. Sysvinit-3.06
+* [8.76. Sysvinit-3.06 --> 8.77. Sysvinit-3.07](#idx19)
 
 [&#x213C;](#)<br id="idx01">
 ## Packages (16 May 2023)
@@ -395,6 +395,16 @@ ln -sv ../vim/vim90/doc /usr/share/doc/vim-9.0.1273
             --docdir=/usr/share/doc/procps-ng-4.0.2 \
             --disable-static                        \
             --disable-kill
+
+```
+
+[&#x213C;](#)<br id="idx19">
+## 8.76. Sysvinit-3.06 --> 8.77. Sysvinit-3.07
+
+* First, apply a patch that removes several programs installed by other packages, clarifies a message, and fixes a compiler warning:
+
+```
+patch -Np1 -i ../sysvinit-3.06-consolidated-1.patch
 
 ```
 
