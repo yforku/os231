@@ -69,7 +69,7 @@ wget -c   --input-file=$LFS/sources/wget-list-sysv --directory-prefix=$LFS/sourc
 wget -c   https://www.linuxfromscratch.org/lfs/view/11.3/md5sums --directory-prefix=$LFS/sources
 md5sum -c md5sums
 # Not in the ORI book
-wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=/sources
+wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=$LFS/sources
 chown root:root $LFS/sources/*
 
 ```
@@ -294,7 +294,9 @@ tar --strip-components=1  \
 * To fetch the package:
 
 ```
-wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=/sources
+[ -d $LFS/sources/ ] || { echo "No $LFS/sources/ directory"; exit; }
+[ -x /usr/bin/wget ] || { echo "Where is wget? Are you in chroot mode?"; exit; }
+wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=$LFS/sources
 
 ```
 
