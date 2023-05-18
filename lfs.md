@@ -298,7 +298,7 @@ if [ -d $LFS/sources/ ] ; then
   if [ -x /usr/bin/wget ] ; then
     wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=$LFS/sources
   else
-    "Where is wget? Are you still in chroot mode?"
+   echo "Where is wget? Are you still in chroot mode?"
   fi
 else
    echo "Where is directory $LFS/sources/ ?"
