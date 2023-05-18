@@ -330,7 +330,14 @@ patch -Np1 -i ../coreutils-9.1-i18n-1.patch
 [&#x213C;](#)<br id="idx15">
 ## 8.57. Gawk-5.2.1 --> 8.58. Gawk-5.2.2
 
-If desired, install the documentation:
+* To test the results, issue:
+
+```
+make check
+
+```
+
+* If desired, install the documentation:
 
 ```
 mkdir -pv                                   /usr/share/doc/gawk-5.2.1
