@@ -33,7 +33,7 @@ permalink: LFS/
 * [8.62. IPRoute2-6.1.0 --> 8.63. IPRoute2-6.3.0](#idx16)
 * 8.63. Kbd-2.5.1 --> 8.64. Kbd-2.5.1
 * 8.64. Libpipeline-1.5.7 --> 8.65. Libpipeline-1.5.7
-* 8.65. Make-4.4 --> 8.66. Make-4.4
+* [8.65. Make-4.4 --> 8.66. Make-4.4.1](#idx16a)
 * 8.66. Patch-2.7.6 --> 8.67. Patch-2.7.6
 * 8.67. Tar-1.34 --> 8.68. Tar-1.34
 * 8.68. Texinfo-7.0.2 --> 8.69. Texinfo-7.0.2
@@ -348,9 +348,30 @@ cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-5.2.1
 [&#x213C;](#)<br id="idx16">
 ## 8.62. IPRoute2-6.1.0 --> 8.63. IPRoute2-6.3.0
 
+* If desired, install the documentation:
+
 ```
 mkdir -pv             /usr/share/doc/iproute2-6.1.0
 cp -v COPYING README* /usr/share/doc/iproute2-6.1.0
+
+```
+
+[&#x213C;](#)<br id="idx16a">
+## 8.65. Make-4.4 --> 8.66. Make-4.4.1
+
+* First, fix some issues identified upstream:
+
+```
+sed -e '/ifdef SIGPIPE/,+2 d' \
+    -e '/undef  FATAL_SIG/i FATAL_SIG (SIGPIPE);' \
+    -i src/main.c
+
+```
+
+* To test the results, issue:
+
+```
+make check
 
 ```
 
