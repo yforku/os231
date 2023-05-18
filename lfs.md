@@ -4,7 +4,7 @@ permalink: LFS/
 
 # LFS 11.3 AARCH64 (ARM64)
 
-[HOME](../) --- [&#x213C;](#idxXX)<br id="idx00">
+[HOME](../) --- [LFS 11.3 ARM64 Book (<span style="color:red; font-weight:bold;">KW</span>)](https://www.linuxfromscratch.org/~xry111/lfs/view/arm64/) --- [LFS 11.3 AMD64 Book (<span style="color:red; font-weight:bold;">ORI</span>)](https://www.linuxfromscratch.org/lfs/view/11.3/index.html) --- [&#x213C;](#idxXX)<br id="idx00">
 ## TOC
 
 * [Packages](#idx01)
@@ -20,7 +20,7 @@ permalink: LFS/
 * [8.49. Libffi-3.4.4](#idx11)
 * [8.50. Python-3.11.2](#idx12)
 * [8.51. Flit-Core-3.8.0](#idx13)
-* 8.51. Wheel-0.38.4 --> 8.52. Wheel-0.40.0
+* [8.51. Wheel-0.38.4 --> 8.52. Wheel-0.40.0](#idx13a)
 * 8.52. Ninja-1.11.1 --> 8.53. Ninja-1.11.1
 * 8.53. Meson-1.0.0 --> 8.54. Meson-1.1.0
 * [8.54. Coreutils-9.1 --> 8.55. Coreutils-9.3](#idx14)
@@ -297,6 +297,17 @@ tar --strip-components=1  \
 [ -d $LFS/sources/ ] || { echo "No $LFS/sources/ directory"; exit; }
 [ -x /usr/bin/wget ] || { echo "Where is wget? Are you in chroot mode?"; exit; }
 wget -c https://pypi.org/packages/source/f/flit-core/flit_core-3.8.0.tar.gz --directory-prefix=$LFS/sources
+
+```
+
+[&#x213C;](#)<br id="idx13a">
+## [8.51. Wheel-0.38.4 --> 8.52. Wheel-0.40.0](idx13a)
+
+* Use the ORI book instruction!
+
+```
+PYTHONPATH=src pip3 wheel -w dist --no-build-isolation --no-deps $PWD
+pip3 install --no-index --find-links=dist wheel
 
 ```
 
